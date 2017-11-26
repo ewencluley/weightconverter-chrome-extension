@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  	"name": "Weight Convertor",
+  	"version": "1.0.0",
+  	"description": "Convert weights inline on a web page from Imperial to Metric",
+  	"browser_action": {
+        "name": "Click to convert weights from imperial to metric"
+    },
+    "icons":
+	{
+	  "128": "images/icon128.png",
+	  "16": "images/icon16.png",
+	  "48": "images/icon48.png"
+	},
+    "background":{
+        "scripts":["background.js"]
+    },
+	"content_scripts": [{
+    	"css": ["style.css"],
+    	"matches": ["<all_urls>"]
+    }],
+  	"web_accessible_resources": [
+  		"background.js", "convert.js"
+  	],
+  	"permissions": [
+        "tabs",
+        "notifications",
+        "http://*/",
+        "https://*/"
+    ]
+ 
+}
